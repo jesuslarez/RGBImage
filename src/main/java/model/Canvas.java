@@ -6,12 +6,13 @@ import javax.swing.JPanel;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 public class Canvas extends JPanel {
-
+    
     private BufferedImage image = null;
     private BufferedImage logo = null;
     private int logoPosition = 1;
@@ -19,9 +20,13 @@ public class Canvas extends JPanel {
     private boolean green = true;
     private boolean blue = true;
     public Canvas() {
+        
+        URL urlImage = getClass().getClassLoader().getResource("dog.jpg");
+        URL urlLogo = getClass().getClassLoader().getResource("imperial1.png");
+        
         try {
-            image = ImageIO.read(new File("src/main/resources/dog.jpg"));
-            logo = ImageIO.read(new File("src/main/resources/imperial1.png"));
+            image = ImageIO.read(urlImage);
+            logo = ImageIO.read(urlLogo);
             this.setPreferredSize(new Dimension(image.getWidth(), image.getHeight()));
         } catch (IOException ex) {
             Logger.getLogger(Canvas.class.getName()).log(Level.SEVERE, null, ex);
