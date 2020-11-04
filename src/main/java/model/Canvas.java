@@ -20,8 +20,8 @@ public class Canvas extends JPanel {
     private boolean blue = true;
     public Canvas() {
         try {
-            image = ImageIO.read(new File("images/dog.jpg"));
-            logo = ImageIO.read(new File("images/imperial1.png"));
+            image = ImageIO.read(new File("src/main/resources/dog.jpg"));
+            logo = ImageIO.read(new File("src/main/resources/imperial1.png"));
             this.setPreferredSize(new Dimension(image.getWidth(), image.getHeight()));
         } catch (IOException ex) {
             Logger.getLogger(Canvas.class.getName()).log(Level.SEVERE, null, ex);

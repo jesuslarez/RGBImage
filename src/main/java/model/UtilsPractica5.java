@@ -27,5 +27,4 @@ public class UtilsPractica5 {
         return img_copy;
     }
     
-    
 }
